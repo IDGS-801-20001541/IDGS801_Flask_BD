@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{%block content%}
+
+
+
+<center>
+<div class="card" style="width: 18rem;">
+
+    <div class="card-body">
+       <h3 class="card-title" style="background-color: aquamarine;">Agregar Palabra</h3>
+       {% from "_macros.html" import render_field %}
+       <form action="" method="post" novalidate>
+         {{form.csrf_token}}
+         <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+         <div class="col-xs-6">
+           
+           <form method="POST">
+             {{form.csrf_token}}
+             <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+             <label for="spanish_color">Palabra en español:</label>
+             <input type="text" id="txtcolorEs" name="txtcolorEs">
+             <br>
+             <label for="english_color">Palabra en inglés:</label>
+             <input type="text" id="txtcolorIn" name="txtcolorIn">
+             <br>
+             <input type="submit" value="Guardar" class="btn btn-info">
+           </form>
+           
+         </div>
+        
+       <div class="col-xs-6">
+        <h3 class="card-title" style="background-color: aquamarine;"> Traducir Palabra</h3>
+         <form method="POST">
+           {{form.csrf_token}}
+           <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+           <div>
+             <label for="color">Palabra:</label>
+             <input type="text" id="color" name="color">
+           </div>
+           <div>
+             <input type="radio" id="rbingles" name="rbgidioma" value="rbingles">
+             <label for="english">Inglés</label>
+           </div>
+           <div>
+             <input type="radio" id="rbespaniol" name="rbgidioma" value="rbespaniol">
+             <label for="spanish">Español</label>
+           </div>
+           <input type="submit" value="Traducir" class="btn btn-info">
+        
+
+           <div class="card">
+            <h4 class="card-header" style="background-color: aquamarine;">Traducción de la Palabra</h4>
+            <div class="card-body">
+                <div style="text-align: center;">
+                    {% if translation %}
+                    <h5> {{ translation }}</h5>
+                    {% endif %}
+                  </div>
+            </div>
+          </div>
+
+          
+
+        </form>
+       </div>
+       </form>
+
+    </div>
+  </div>
+
+</center>
+
+  
+    {%endblock%}

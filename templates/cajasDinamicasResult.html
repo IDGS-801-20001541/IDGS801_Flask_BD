@@ -1,0 +1,41 @@
+{% extends "layout.html"%}
+
+{%block content%}
+<div class="col-xs-6">
+    <!--Pintar el formulario utilizando el macro creado
+    __ datos privados
+    -->
+    <br>
+    
+    <div class="control group">
+        <label for="max" class="control-label"><h5>Número Mayor</h5></label>
+        <div class="controls">
+            <input type="number" name="" class="input-xlarge" disabled  value="{{may}}">
+        </div>
+    </div>
+    <div class="control group">
+        <label for="Min" class="control-label"><h5>Número Menor</h5></label>
+        <div class="controls">
+            <input type="number" name="" class="input-xlarge" disabled  value="{{mini}}">
+        </div>
+
+    </div>
+    <div class="control group">
+        <label for="Pro" class="control-label"><h5>Promedio</h5></label>
+        <div class="controls">
+            <input type="number" name="" class="input-xlarge" disabled  value="{{pro}}">
+        </div>
+
+    </div>
+    <div class="control group">
+        <label for="nR" class="control-label"><h5>Número que se repetio</h5></label>
+        <div class="controls">
+            {% for i in range(0,1) %}
+            <h6>{{res}}</h6>
+            {% endfor %}
+        </div>
+
+    </div>
+
+</div>
+{%endblock%}

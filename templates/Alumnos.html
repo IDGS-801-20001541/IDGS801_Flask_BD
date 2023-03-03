@@ -1,0 +1,32 @@
+{% extends "layout.html"%}
+
+{%block content%}
+<div class="col-xs-6">
+    <!--Pintar el formulario utilizando el macro creado
+    __ datos privados
+    -->
+    {% from "_macros.html" import render_field %} 
+    <form action="" method="post" novalidate>
+    <div class="row control-group">
+        <div class="form-goup">
+            {{render_field(form.matricula)}}
+            {{render_field(form.nombre)}}
+            {{render_field(form.apaterno)}}
+            {{render_field(form.amaterno)}}
+            {{render_field(form.email)}}
+        </div>
+       
+        <input type="submit" value="Registrar">
+    </div>
+    </form
+</div>
+<div class="col-md-6">
+    
+    <h3>Matricula :{{mat}}</h3>
+    <h3>Nombre :{{nom}}</h3>
+</div>
+    
+<div class="col-xd-6">
+
+</div>
+{%endblock%}

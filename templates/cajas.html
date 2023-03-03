@@ -1,0 +1,36 @@
+{% extends "layout.html"%}
+
+{%block content%}
+<div class="col-xs-6">
+    <!--Pintar el formulario utilizando el macro creado
+    __ datos privados
+    -->
+    <br>
+    {% from "_macros.html" import render_field %}
+    <form action="" method="post">
+        <div class="row control-group">
+            <div class="form-goup">
+                {{render_field(form.numero)}}
+            </div>
+
+            <input type="submit" value="Crear">
+        </div>
+        <br>
+    </form>
+        <form action="/Calcular" method="post">
+            <div class="row control-group">
+                {% for i in range(0,num) %}
+                <div class="control group">
+                    <label for="{{num}}" class="control-label">Caja {{i+1}}</label>
+                    <div class="controls">
+                        <input type="number" name="txtNumeroL" class="input-xlarge"  value="">
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+         <input type="submit" value="Calcular">
+        </form>
+</div>
+
+{%endblock%}
