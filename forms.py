@@ -7,4 +7,4 @@ class UserForm(Form):
     id =IntegerField('id')
     nombre = StringField('nombre')
     apellidos = StringField('apellidos') 
-    email = EmailField('correo')
+    correo = EmailField('correo')

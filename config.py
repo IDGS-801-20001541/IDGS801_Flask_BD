@@ -8,5 +8,5 @@ class Config(object):
  #Hacer la coneccion a la base de datos 
 class DevelomentConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI ='mysql+pymysql://root:diana1234@localhost:3308/idgs801'
+    SQLALCHEMY_DATABASE_URI ='mysql+pymysql://root:diana1234@localhost/idgs801'
     SQLALCHEMY_TRACK_MODIFICATION = False
